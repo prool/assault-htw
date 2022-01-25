@@ -153,7 +153,7 @@ int bind args( ( int s, struct sockaddr *name, int namelen ) );
 void bzero args( ( char *b, int length ) );
 int getpeername args( ( int s, struct sockaddr *name, int *namelen ) );
 int getsockname args( ( int s, struct sockaddr *name, int *namelen ) );
-int gettimeofday args( ( struct timeval *tp, struct timezone *tzp ) );
+//int gettimeofday args( ( struct timeval *tp, struct timezone *tzp ) ); // prool
 int listen args( ( int s, int backlog ) );
 int setsockopt args( ( int s, int level, int optname, void *optval,
 				int optlen ) );
@@ -193,7 +193,7 @@ int close args( ( int fd ) );
  int     getpeername     args( ( int s, struct sockaddr *name, int *namelen ) );
  int     getsockname     args( ( int s, struct sockaddr *name, int *namelen ) );
  */
-int gettimeofday args( ( struct timeval *tp, struct timezone *tzp ) );
+//int gettimeofday args( ( struct timeval *tp, struct timezone *tzp ) ); // prool
 /*
  int     listen          args( ( int s, int backlog ) );
  */

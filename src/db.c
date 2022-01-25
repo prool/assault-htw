@@ -1840,6 +1840,7 @@ void load_sobjects(int mode) {
 	if ((objectfp = fopen(object_file_name, "r")) == NULL) {
 		log_f("Load object Table: fopen");
 		perror("failed open of objects.txt in load_sobject");
+		return; // prool
 	}
 
 	else {
@@ -2128,6 +2129,7 @@ void load_buildings( void )
     {
         log_f( "Load Buildings Table: fopen" );
         perror( "failed open of buildings.txt in load_buildings" );
+	return; // prool: if error then return!
     }
     else
     {
@@ -2369,6 +2371,7 @@ void load_scores(void) {
 	if ((fp = fopen( MAX_PLAYERS_FILE, "r")) == NULL) {
 		log_f("Loading max players: fopen");
 		perror("failed open of players.txt in load_scores");
+		return; // prool
 	} else {
 		extern int max_players_ever;
 		fpArea = fp;

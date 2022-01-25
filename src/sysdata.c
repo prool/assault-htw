@@ -51,7 +51,8 @@ void load_sysdata( void )
     if ( ( sysfp = fopen( sys_file_name, "r" ) ) == NULL )
     {
         bug( "Load Sys Table: fopen", 0 );
-        log_f( "failed open of system.dat in load_sysdata" );
+        log_f( "error #1: failed open of system.dat in load_sysdata" );
+	return; // prool
     }
     else
     {
@@ -96,7 +97,8 @@ void save_sysdata( void )
     if ( ( fp = fopen( sys_file_name, "w" ) ) == NULL )
     {
         bug( "Save Sysdata: fopen", 0 );
-        log_f( "failed open of system.dat in save_sysdata" );
+        log_f( "error #2: failed open of system.dat in save_sysdata" );
+	return; // prool
     }
     else
     {
