@@ -407,6 +407,18 @@ void free_desc args( ( DESCRIPTOR_DATA *d ) );
 
 /*+*/int global_port;
 
+// prool begin
+// prool here: http://mud.kharkov.org proolix@gmail.com
+int isprool(char c) // prool's modif for isprint
+{
+if ((c<32)&&(c>=0)) return 0;
+if (c==-1) return 0;
+if (c==-2) return 0;
+if (c==-3) return 0;
+return 1;
+}
+// prool end
+
 int main(int argc, char **argv) {
 	struct timeval now_time;
 	bool fCopyOver = FALSE; /* HOTreboot??? Well is it...is it???? - Flar */
@@ -1488,7 +1500,7 @@ void read_from_buffer(DESCRIPTOR_DATA *d) {
 
 		if (d->inbuf[i] == '\b' && k > 0)
 			--k;
-		else if ( isascii(d->inbuf[i]) && isprint(d->inbuf[i]))
+		else if ( isprool(d->inbuf[i]) /*isascii(d->inbuf[i]) && isprint(d->inbuf[i])*/) // prool: enable 8bit chars
 			d->incomm[k++] = d->inbuf[i];
 	}
 

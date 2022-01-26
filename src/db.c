@@ -1840,6 +1840,7 @@ void load_sobjects(int mode) {
 	if ((objectfp = fopen(object_file_name, "r")) == NULL) {
 		log_f("Load object Table: fopen");
 		perror("failed open of objects.txt in load_sobject");
+		printf("prooldebug: object_file_name='%s'\n", object_file_name);
 		return; // prool
 	}
 
@@ -1943,6 +1944,7 @@ void load_alliances(void) {
 	if ((objectfp = fopen(object_file_name, "r")) == NULL) {
 		log_f("Load object Table: fopen");
 		perror("failed open of alliances.txt in load_alliances");
+		return; // prool
 	}
 
 	else {
