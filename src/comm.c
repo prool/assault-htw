@@ -2300,10 +2300,10 @@ void nanny(DESCRIPTOR_DATA *d, char *argument) {
 					continue;
 				if (can_multiplay(wch) || wch->fake)
 					continue;
-				if (!str_cmp(d->host, wch->pcdata->host) && (wch->trust < 80)) {
+				if (0/*!str_cmp(d->host, wch->pcdata->host) && (wch->trust < 80)*/) {
 					char buf[MSL] = "\0";
 					sprintf(buf,
-							"%s is already logged on from your IP. No multiplaying!",
+							"%s is already logged on from your IP. No multiplaying! (1)",
 							wch->name);
 					write_to_buffer(d, buf, 0);
 					log_string("Connection  refused - Already connected.");
@@ -2321,10 +2321,10 @@ void nanny(DESCRIPTOR_DATA *d, char *argument) {
 					continue;
 				if (can_multiplay(wch) || wch->fake)
 					continue;
-				if (!str_cmp(d->host, wch->pcdata->host) && (wch->trust < 80)) {
+				if (0/*!str_cmp(d->host, wch->pcdata->host) && (wch->trust < 80)*/) {
 					char buf[MSL] = "\0";
 					sprintf(buf,
-							"%s is already logged on from your IP. No multiplaying!",
+							"%s is already logged on from your IP. No multiplaying! (2)",
 							wch->name);
 					write_to_buffer(d, buf, 0);
 					log_string("Connection  refused - Already connected.");
