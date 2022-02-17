@@ -247,7 +247,7 @@ void boot_db(bool fCopyOver) {
      * Read in all the area files.
      */
         FILE *fpList;
-        log_f( "Reading Area Files..." );
+        //log_f( "Reading Area Files..." );
 
         if ( ( fpList = fopen( AREA_LIST, "r" ) ) == NULL )
         {
@@ -365,46 +365,46 @@ void boot_db(bool fCopyOver) {
 
         //Move on individual loading functions.
         fBootDb = FALSE;
-        log_f( "Loading web data." );
+//        log_f( "Loading web data." );
         load_web_data();
-        log_f( "Loading Building Table...." );
+//        log_f( "Loading Building Table...." );
         load_building_t( );
-        log_f( "Loading Wilderness...." );
+//        log_f( "Loading Wilderness...." );
         read_map_from_file( );
-        log_f( "Creating Special Maps...." );
+//        log_f( "Creating Special Maps...." );
         create_special_map();
-        log_f( "Loading Buildings...." );
+//        log_f( "Loading Buildings...." );
         load_buildings();
-        log_f( "Loading Objects...." );
+        //log_f( "Loading Objects...." );
         load_sobjects( 1 );
-        log_f( "Loading High Scores...." );
+        //log_f( "Loading High Scores...." );
         load_scores();
         load_ranks();
-        log_f( "Loading alliances...." );
+        //log_f( "Loading alliances...." );
         load_alliances();
-        log_f( "Loading changes." );
+        //log_f( "Loading changes." );
         load_changes();
-        log_f( "Loading logs." );
+        //log_f( "Loading logs." );
         load_logs();
-        log_f( "Creating item load list...." );
+        //log_f( "Creating item load list...." );
         create_load_list();
         /* loading of disabled commands - Wyn */
-        log_f( "Loading Disabled Commands..." );
+        //log_f( "Loading Disabled Commands..." );
         load_disabled();
-        log_f( "Loading Multiplay list...." );
+        //log_f( "Loading Multiplay list...." );
         load_multiplay();
-        log_f( "Loading quotes." );
+        //log_f( "Loading quotes." );
         load_quotes( );
         booting_up = TRUE;
         booting_up = FALSE;
-        log_f( "Loading banned sites." );
+        //log_f( "Loading banned sites." );
         load_bans( );
-        log_f( "Loading Relevel Info." );
+        //log_f( "Loading Relevel Info." );
         do_loadrelevel( );
 
-        log_f( "Loading imm brands." );
+        //log_f( "Loading imm brands." );
         load_brands( );
-        log_f( "Loading System Data." );
+        //log_f( "Loading System Data." );
         load_sysdata( );
         save_objects(0);
 
@@ -418,7 +418,7 @@ void boot_db(bool fCopyOver) {
     }
     else
     {
-        log_f( "Loading vehicles..." );
+        //log_f( "Loading vehicles..." );
         load_vehicles(0);
     }
     return;
@@ -547,7 +547,7 @@ void load_quotes(void) {
 	sprintf(quote_file_name, "%s", QUOTE_FILE);
 
 	sprintf(buf, "Loading %s\n\r", quote_file_name);
-	log_f(buf);
+	//log_f(buf);
 
 	if ((quotefp = fopen(quote_file_name, "r")) == NULL) {
 		log_f("Load quote Table: fopen");
@@ -575,7 +575,7 @@ void load_bans(void) {
 
 	sprintf(bans_file_name, "%s", BANS_FILE);
 	sprintf(buf, "Loading %s\n\r", bans_file_name);
-	log_f(buf);
+	//log_f(buf);
 
 	if ((bansfp = fopen(bans_file_name, "r")) == NULL) {
 		log_f("Load bans Table: fopen");
@@ -615,7 +615,7 @@ void load_bans(void) {
 		fclose(bansfp);
 		fpArea = NULL;
 		sprintf(buf, "Done Loading %s", bans_file_name);
-		log_f(buf);
+		//log_f(buf);
 
 	}
 }
@@ -1835,7 +1835,7 @@ void load_sobjects(int mode) {
 		sprintf(object_file_name, "%s", OBJECTS_FEST_FILE);
 
 	sprintf(buf, "Loading %s\n\r", object_file_name);
-	log_f(buf);
+	//log_f(buf);
 
 	if ((objectfp = fopen(object_file_name, "r")) == NULL) {
 		log_f("Load object Table: fopen");
@@ -1878,7 +1878,7 @@ void read_map_from_file(void) {
 	sprintf(object_file_name, "%s", MAP_FILE);
 
 	sprintf(buf, "Loading %s\n\r", object_file_name);
-	log_f(buf);
+	//log_f(buf);
 
 	v = 0;
 	if ((objectfp = fopen(object_file_name, "r")) == NULL) {
@@ -1939,7 +1939,7 @@ void load_alliances(void) {
 	sprintf(object_file_name, "%s", ALLIANCES_FILE);
 
 	sprintf(buf, "Loading %s\n\r", object_file_name);
-	log_f(buf);
+	//log_f(buf);
 
 	if ((objectfp = fopen(object_file_name, "r")) == NULL) {
 		log_f("Load object Table: fopen");
@@ -2058,7 +2058,7 @@ void load_vehicles(int mode) {
 		sprintf(object_file_name, "%s", VEHICLE_FILE);
 
 	sprintf(buf, "Loading %s\n\r", object_file_name);
-	log_f(buf);
+	//log_f(buf);
 
 	if ((fp = fopen(object_file_name, "r")) == NULL) {
 		log_f("Load Buildings Table: fopen");
@@ -2125,7 +2125,7 @@ void load_buildings( void )
     sprintf( object_file_name, "%s", BUILDING_FILE );
 
     sprintf( buf, "Loading %s\n\r", object_file_name);
-    log_f( buf );
+    //log_f( buf );
 
     if ( ( fp = fopen( object_file_name, "r" ) ) == NULL )
     {
@@ -2219,7 +2219,7 @@ void load_buildings_b( int mode )
         sprintf( object_file_name, "%s", BUILDING_FEST_FILE );
 
     sprintf( buf, "Loading %s\n\r", object_file_name);
-    log_f( buf );
+    //log_f( buf );
 
     if ( ( fp = fopen( object_file_name, "r" ) ) == NULL )
     {
@@ -2296,7 +2296,7 @@ void load_multiplay(void) {
 	sprintf(object_file_name, "%s", MULTIPLAY_FILE);
 
 	sprintf(buf, "Loading %s\n\r", object_file_name);
-	log_f(buf);
+	//log_f(buf);
 
 	if ((fp = fopen(object_file_name, "r")) == NULL) {
 		log_f("Load Multiplay Table: fopen");
@@ -2343,7 +2343,7 @@ void load_scores(void) {
 	sprintf(object_file_name, "%s", SCORE_FILE);
 
 	sprintf(buf, "Loading %s\n\r", object_file_name);
-	log_f(buf);
+	//log_f(buf);
 
 	if ((fp = fopen(object_file_name, "r")) == NULL) {
 		log_f("Load scores Table: fopen");
@@ -2394,7 +2394,7 @@ void load_ranks(void) {
 	sprintf(object_file_name, "%s", RANK_FILE);
 
 	sprintf(buf, "Loading %s\n\r", object_file_name);
-	log_f(buf);
+	//log_f(buf);
 
 	if ((fp = fopen(object_file_name, "r")) == NULL) {
 		log_f("Load scores Table: fopen");
@@ -2688,7 +2688,7 @@ void load_building_t(void) {
 	sprintf(object_file_name, "%s", BUILDING_TABLE_FILE);
 
 	sprintf(buf, "Loading %s\n\r", object_file_name);
-	log_f(buf);
+	//log_f(buf);
 
 	if ((fp = fopen(object_file_name, "r")) == NULL) {
 		log_f("Load Building Table: fopen");
@@ -2733,7 +2733,7 @@ void load_building_t(void) {
 	}
 	MAX_BUILDING = i;
 	sprintf(buf, "Buildings: %d", MAX_BUILDING);
-	log_f(buf);
+	//log_f(buf);
 	fclose(fp);
 	fpArea = NULL;
 	return;

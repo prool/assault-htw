@@ -50,8 +50,9 @@ void load_sysdata( void )
 
     if ( ( sysfp = fopen( sys_file_name, "r" ) ) == NULL )
     {
-        bug( "Load Sys Table: fopen", 0 );
-        log_f( "error #1: failed open of system.dat in load_sysdata" );
+	printf("prool debug: can't open '%s'\n", sys_file_name); // prool
+        //bug( "Load Sys Table: fopen", 0 );
+        //log_f( "error #1: failed open of system.dat in load_sysdata" );
 	return; // prool
     }
     else

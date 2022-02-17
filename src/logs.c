@@ -50,7 +50,8 @@ void load_changes(void)
     totChanges = 0;
     if ( !(fp = fopen( CHANGES_FILE, "r")) )
     {
-        bug( "Could not open Changes File for reading.", 0 );
+	printf("prool debug: can't open '%s'\n", CHANGES_FILE); // prool
+        //bug( "Could not open Changes File for reading.", 0 );
         return;
     }
 
