@@ -1322,12 +1322,12 @@ bool read_from_descriptor(DESCRIPTOR_DATA *d) {
 			if (d->inbuf[iStart - 1] == '\n' || d->inbuf[iStart - 1] == '\r')
 				break;
 		} else if (nRead == 0) {
-			log_string("EOF encountered on read.");
+			//log_string("EOF encountered on read."); // prool
 			return FALSE;
 		} else if ( errno == EWOULDBLOCK)
 			break;
 		else {
-			perror("Read_from_descriptor");
+			//perror("Read_from_descriptor"); // prool
 			return FALSE;
 		}
 	}
