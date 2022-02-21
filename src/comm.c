@@ -1105,7 +1105,7 @@ void new_descriptor(int control) {
 		sprintf(buf, "%d.%d.%d.%d", (addr >> 24) & 0xFF, (addr >> 16) & 0xFF,
 				(addr >> 8) & 0xFF, (addr) & 0xFF);
 		sprintf(log_buf, "Sock.sinaddr:  %s (%d)", buf, ntohs(sock.sin_port));
-		log_string(log_buf);
+		//log_string(log_buf); // by prool
 
 		for (pban = first_ban; pban != NULL; pban = pban->next) {
 			if (!str_prefix(pban->name, buf)) {
