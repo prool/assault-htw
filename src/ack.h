@@ -875,7 +875,7 @@ void do_loadrelevel( void );
 void do_readrelevel( FILE * fp, RELEVEL_DATA * pRelevel );
 
 /* Relevel DATA */
-struct system_data {
+extern struct system_data { // prool: add extern
     RELEVEL_DATA   * pRelevelList;
 } rlvldata;
 

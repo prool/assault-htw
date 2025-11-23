@@ -402,6 +402,8 @@ char *_fread_string(FILE * fp, const char *caller)
     char *ptr = buf;
     char c;
 
+//printf("prool debug _fread_string() caller='%s'\r\n", caller); // prool
+
     do
     {
         c = getc(fp);
@@ -420,8 +422,9 @@ char *_fread_string(FILE * fp, const char *caller)
             break;
 
         case EOF:
-            bugf("Fread_string: EOF");
-            raise(SIGSEGV);
+            bugf("error 2: Fread_string: EOF");
+		exit (2); // prool
+            //raise(SIGSEGV);
             break;
 
         case '\n':

@@ -50,6 +50,8 @@
 #include "email.h"
 #endif
 
+struct system_data rlvldata; // prool
+
 DECLARE_DO_FUN(do_gitpull);
 
 void  purge_room   args( ( CHAR_DATA *, ROOM_INDEX_DATA * ) );
